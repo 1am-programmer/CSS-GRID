@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS GRID : RESPONSIVE GRID</title>
+</head>
+
+<body>
+    <style>
+        body {
+            color: white;
+            font-family: serif;
+            text-align: center;
+        }
+        /* For mobile */
+        .content {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-auto-rows: minmax(100px, auto);
+                max-width: 960px;
+                margin: auto;
+                grid-gap: 10px;
+                grid-template-areas:
+                    "header header header header"
+                    "footer footer footer footer"
+                    "main main main main"
+                    "main main main main"
+                    "aside aside nav nav"
+                    "section section section section"
+                    "section section section section";
+                   
+            }
+
+
+        @media screen and (min-width: 760px) {
+
+            .content {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-auto-rows: minmax(100px, auto);
+                max-width: 960px;
+                margin: auto;
+                grid-gap: 10px;
+                grid-template-areas:
+                    "header header header header"
+                    "aside aside main main"
+                    "nav nav main main"
+                    "section section section section"
+                    "footer footer footer footer";
+            }
+
+        }
+
+        .content>* {
+            background-color: orchid;
+            padding: 30px;
+
+        }
+
+        header {
+            grid-area: header;
+        }
+
+        main {
+            grid-area: main;
+        }
+
+        section {
+            grid-area: section;
+        }
+
+        aside {
+            grid-area: aside;
+        }
+
+        nav {
+            grid-area: nav;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+    </style>
+
+
+    <div class="content">
+        <header>Header</header>
+        <main style="background-color: red;">Main</main>
+        <section style="background-color: black;">Section</section>
+        <aside style="background-color: blue;">Aside</aside>
+        <nav style="background-color: yellow;">Nav</nav>
+        <footer>Footer</footer>
+    </div>
+</body>
+
+</html>

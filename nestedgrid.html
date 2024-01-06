@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS GRID: NESTED GRID</title>
+</head>
+<body>
+    <style>
+                body {
+            color: #fff;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* grid-template-rows: repeat(4, minmax(150px, auto)); */
+            grid-gap: 10px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .content div {
+            background: #3bbced;
+            padding: 30px;
+        }
+
+        .content div:nth-child(even) {
+            background: #777;
+        }
+        .nested{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+        }
+        .nested p{
+            border: 1px solid;
+            padding: 20px;
+            margin: 0;
+            /*You can also enlarge the column grid to occupy column 1 to 4*/
+        }
+
+    </style>
+    
+    <div class="content">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div class="nested">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p> 
+        </div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+
+    
+</body>
+</html>

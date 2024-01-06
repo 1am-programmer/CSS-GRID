@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USING CSS GRIDS: ROWS</title>
+</head>
+<body>
+    
+    <style>
+        body {
+            color: #fff;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+        }
+
+        .content {
+            /* to use grid,this is the FIRST thing to do */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            
+            /*To give each row a set height
+            grid-auto-rows: 200px; */    
+            max-width: 960px;
+            margin: 0 auto;
+
+            /*Adding gaps between columns*/
+            grid-gap: 10px;
+
+            /*Using rows templates*/
+            grid-template-rows: repeat(3, minmax(200px, auto));
+        }
+         /*Using minmax (200px, auto) we mean,the minimum of the content in our grid shoule be 200px,
+         but if greater, it should extend to as much as the content in the row*/
+
+        .content div {
+            background: #3bbced;
+            padding: 30px;
+        }
+
+        .content div:nth-child(even) {
+            background: #777;
+        }
+    </style>
+
+
+    <div class="content">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+
+</body>
+</html>
