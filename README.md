@@ -1,5 +1,5 @@
 
-Below is a sample README.md file for a list of CSS Grid methods:
+Below is a simple README.md file for a list of CSS Grid methods:
 
 # CSS Grid Methods
 
